@@ -16,17 +16,25 @@
 			<p> title 
 				<input name="title" id="title" type="text" />
 			</p>
-			<p> category
-				<input name="category" id="category" type="text" />
+			<p> category 
+				<select>
+					<option value="antiques">Antiques</option>
+					<option value="Eelectronics">Electronics</option>
+					<option value="Fashion">Fashion</option>
+					<option value="Home & Garden">Home & Garden</option>
+					<option value="Sports">Sports</option>
+					<option value="Toys & Games">Toys & Games</option>
+					<option value="Other">Other</option>
+				</select>
 			</p>
 			<p> description
 				<textarea name="description" id="description" rows="5" cols="45"></textarea>
 			</p>
 			<p> price
-				<input name="price" id="price" type="text" />
+				<input id="number" type="number" min="0.01" step="0.01" />
 			</p>
 			<p> postage 
-				<input name="postage" id="postage" type="text" />
+				<input id="number" type="number" />
 			</p>
 			<p> image
 				<input name="imagefile" type="file" />
@@ -42,3 +50,59 @@
 		]
 	</body>
 </html>
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title> iBay </title>
+	<style>
+	body {
+		background-color: linen;
+		}
+    
+    .small-btn {
+        width: 50px;
+        height: 25px;
+    }
+    
+    .medium-btn {
+        width: 70px;
+        height: 30px;
+    }
+    
+    .big-btn {
+        width: 120px;
+        height: 40px;
+    }
+	
+	</style>
+</head>
+
+<body>
+	<h1 style="font-size:45px;text-align:center;"> iBay </h1>
+	<p>Insert the following information about your item:</p>
+	<form>
+		Item Title:<input type="text" name="title"><br>
+		
+		Category:<select><option value="antiques">Antiques</option>
+		</select><br>
+		Description:<textarea id="subject" name="subject" placeholder="Describe your item..." style="height:170px"></textarea><br>
+		Price:<input id="number" type="number" min="0.01" step="0.01"><br>
+		Postage:<input id="number" type="number"><br>
+		Select a file: <input type="file" name="img"> <br> 
+		Select images: <input type="file" name="img" multiple>
+		<input type="submit"> <br>
+		Finish time:<input type="date" name="enddate"> <br>
+		Confirmation of correct item details:<input type="checkbox" name="confirm" value="confirm">
+		<br>
+		<input style="background-color: #00FF00;color: #FF0000;padding: 20px;border-radius: 20px;-moz-border-radius: 20px;-webkit-border-radius: 20px;margin:10px" 
+		type="button" value="Start Selling Your Item!">
+
+		
+	</form>
+	
+	
+
+
+</body> 
+</html>  -->
