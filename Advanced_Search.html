@@ -1,0 +1,38 @@
+<html>
+<head>
+  <h1>Advanced Search</h1>
+  <link type= "text/css" rel = "stylesheet" href = "stylesheetlogin.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <form action="#advanced_search">
+    <p>
+      Product name:<br>
+      <input type="text" name="title_AS"><br>
+    </p>
+    <p>
+      Category:<br>
+      <select>
+        <option value="antiques">Antiques</option>
+        <option value="Eelectronics">Electronics</option>
+        <option value="Fashion">Fashion</option>
+        <option value="Home & Garden">Home & Garden</option>
+        <option value="Sports">Sports</option>
+        <option value="Toys & Games">Toys & Games</option>
+        <option value="Other">Other</option>
+      </select><br>
+    </p>
+    <p>
+      Words to look for in the description:<br>
+      <textarea name="description_AS" id="description_AS"></textarea>
+    </p>
+    <p>
+      Price Range: <br>
+      <font class="tooltip">From:
+      <span class="tooltipText">something</span></font>
+      <input name="minPrice_AS" type="text" id="minPrice_AS" value="0"/> &nbsp;&nbsp;
+      To: <input type="text" name="maxPrice_AS" id="maxPrice_AS" value="10000"/>
+    </p>
+
+
+</html>

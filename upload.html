@@ -3,20 +3,20 @@
 	<head>
 		<title> Upload Item to biffbg </title>
 	</head>
-	<body> 
+	<body>
 		<h3> IBAY </h3>
 		<form action="upload.php" enctype="multipart/form-data" method="post">
 			<input name="MAX_FILE_SIZE" type="hidden" value="1000000" />
-			<p> db name 
+			<p> db name
 			<input name="dbname" type="text" value="group03"/>
 			</p>
 			<p> userId
 				<input name="userId" id="userId" type="text" />
 			</p>
-			<p> title 
+			<p> Title
 				<input name="title" id="title" type="text" />
 			</p>
-			<p> category 
+			<p> Category
 				<select>
 					<option value="antiques">Antiques</option>
 					<option value="Eelectronics">Electronics</option>
@@ -27,16 +27,16 @@
 					<option value="Other">Other</option>
 				</select>
 			</p>
-			<p> description
+			<p> Description
 				<textarea name="description" id="description" rows="5" cols="45"></textarea>
 			</p>
-			<p> price
+			<p> Price
 				<input id="number" type="number" min="0.01" step="0.01" />
 			</p>
-			<p> postage 
+			<p> Postage
 				<input id="number" type="number" />
 			</p>
-			<p> image
+			<p> Images
 				<input name="imagefile" type="file" />
 			</p>
 			<p>
@@ -46,7 +46,7 @@
 		</form>
 		<hr />
 		[
-		<a href="view.php?dbname=group03">view items</a>
+		<a href="view.php?dbname=group03">View Items</a>
 		]
 	</body>
 </html>
@@ -59,22 +59,22 @@
 	body {
 		background-color: linen;
 		}
-    
+
     .small-btn {
         width: 50px;
         height: 25px;
     }
-    
+
     .medium-btn {
         width: 70px;
         height: 30px;
     }
-    
+
     .big-btn {
         width: 120px;
         height: 40px;
     }
-	
+
 	</style>
 </head>
 
@@ -83,26 +83,26 @@
 	<p>Insert the following information about your item:</p>
 	<form>
 		Item Title:<input type="text" name="title"><br>
-		
+
 		Category:<select><option value="antiques">Antiques</option>
 		</select><br>
 		Description:<textarea id="subject" name="subject" placeholder="Describe your item..." style="height:170px"></textarea><br>
 		Price:<input id="number" type="number" min="0.01" step="0.01"><br>
 		Postage:<input id="number" type="number"><br>
-		Select a file: <input type="file" name="img"> <br> 
+		Select a file: <input type="file" name="img"> <br>
 		Select images: <input type="file" name="img" multiple>
 		<input type="submit"> <br>
 		Finish time:<input type="date" name="enddate"> <br>
 		Confirmation of correct item details:<input type="checkbox" name="confirm" value="confirm">
 		<br>
-		<input style="background-color: #00FF00;color: #FF0000;padding: 20px;border-radius: 20px;-moz-border-radius: 20px;-webkit-border-radius: 20px;margin:10px" 
+		<input style="background-color: #00FF00;color: #FF0000;padding: 20px;border-radius: 20px;-moz-border-radius: 20px;-webkit-border-radius: 20px;margin:10px"
 		type="button" value="Start Selling Your Item!">
 
-		
+
 	</form>
-	
-	
 
 
-</body> 
+
+
+</body>
 </html>  -->
