@@ -84,13 +84,14 @@ body {
 
 }
 
-
+/* Tooltip container */
 .tooltip {
 	position:relative;;
 	display: inline-block;
 	border-bottom: 1px dotted black;
 }
 
+/* Tooltip text */
 .tooltip .tooltipText{
 	visibility: :hidden;
 	width: 120px;
@@ -108,9 +109,10 @@ body {
 	transition: opacity 0.4s;
 }
 
+/* Tooltip arrow */
 .tooltip .tooltipText::after{
 	content: "";
-	position: absolute;;
+	position: relative;
 	top: 100%;
 	left: 50%;
 	margin-left: -5px;
