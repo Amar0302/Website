@@ -1,16 +1,21 @@
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js">
+  </script>
   <h1>Advanced Search</h1>
-  <link type= "text/css" rel = "stylesheet" href = "stylesheetlogin.css" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <hr>
 </head>
 <body>
   <form action="#advanced_search">
-    <p>
+    <div>
       Product name:<br>
       <input type="text" name="title_AS"><br>
-    </p>
-    <p>
+    </div>
+
+    <div>
       Category:<br>
       <select>
         <option value="antiques">Antiques</option>
@@ -21,18 +26,59 @@
         <option value="Toys & Games">Toys & Games</option>
         <option value="Other">Other</option>
       </select><br>
-    </p>
-    <p>
+    </div>
+
+    <div>
       Words to look for in the description:<br>
       <textarea name="description_AS" id="description_AS"></textarea>
-    </p>
-    <p>
-      Price Range: <br>
-      <font class="tooltip">From:
-      <span class="tooltipText">something</span></font>
-      <input name="minPrice_AS" type="text" id="minPrice_AS" value="0"/> &nbsp;&nbsp;
-      To: <input type="text" name="maxPrice_AS" id="maxPrice_AS" value="10000"/>
-    </p>
+    </div>
+
+    <div data-role="main" class="ui-content">
+    <form method="post" action="/action_page_post.php">
+      <div data-role="rangeslider">
+        <label for="price-min">Price:</label>
+        <input type="range" name="price-min" id="price-min" value="200" min="0" max="1000">
+        <label for="price-max">Price:</label>
+        <input type="range" name="price-max" id="price-max" value="800" min="0" max="1000">
+      </div>
+      </form>
+    </div>
+
+    <div>
+      Postage:<br>
+      <textarea name="postage_AS" id="postage_AS"></textarea>
+    </div>
+
+    <hr>
+
+    <h4>Choose which fields to search for</h4>
+      <label class="container">Product name
+        <input type="checkbox" checked="unchecked">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">Category
+        <input type="checkbox" checked="unchecked">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">Description
+        <input type="checkbox" checked="unchecked">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">Price
+        <input type="checkbox" checked="unchecked">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">Postage
+        <input type="checkbox" checked="unchecked">
+        <span class="checkmark"></span>
+      </label>
+
+    <div>
+      <input type="submit" data-inline="true" value="Submit">
+    </div>
+
+    <div>
 
 
+</body>
 </html>
