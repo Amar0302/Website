@@ -5,79 +5,91 @@
   <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
   <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js">
   </script>
+
+  <style>
+  .container {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+  }
+  </style>
   <h1>Advanced Search</h1>
   <hr>
 </head>
 <body>
-  <form action="#advanced_search">
-    <div>
-      Product name:<br>
-      <input type="text" name="title_AS"><br>
-    </div>
-
-    <div>
-      Category:<br>
-      <select>
-        <option value="antiques">Antiques</option>
-        <option value="Eelectronics">Electronics</option>
-        <option value="Fashion">Fashion</option>
-        <option value="Home & Garden">Home & Garden</option>
-        <option value="Sports">Sports</option>
-        <option value="Toys & Games">Toys & Games</option>
-        <option value="Other">Other</option>
-      </select><br>
-    </div>
-
-    <div>
-      Words to look for in the description:<br>
-      <textarea name="description_AS" id="description_AS"></textarea>
-    </div>
-
-    <div data-role="main" class="ui-content">
-    <form method="post" action="/action_page_post.php">
-      <div data-role="rangeslider">
-        <label for="price-min">Price:</label>
-        <input type="range" name="price-min" id="price-min" value="200" min="0" max="1000">
-        <label for="price-max">Price:</label>
-        <input type="range" name="price-max" id="price-max" value="800" min="0" max="1000">
+  <div class="container">
+    <form action="advanced_search.php" enctype="multipart/form-data" method="post">
+      <div>
+        Product name:<br>
+        <input type="text" name="title_AS"><br>
       </div>
-      </form>
-    </div>
 
-    <div>
-      Postage:<br>
-      <textarea name="postage_AS" id="postage_AS"></textarea>
-    </div>
+      <div>
+        Category:<br>
+        <select name="category_AS">
+          <option value="antiques">Antiques</option>
+          <option value="Eelectronics">Electronics</option>
+          <option value="Fashion">Fashion</option>
+          <option value="Home & Garden">Home & Garden</option>
+          <option value="Sports">Sports</option>
+          <option value="Toys & Games">Toys & Games</option>
+          <option value="Other">Other</option>
+        </select><br>
+      </div>
 
-    <hr>
+      <div>
+        Words to look for in the description:<br>
+        <textarea name="description_AS" id="description_AS"></textarea>
+      </div>
 
-    <h4>Choose which fields to search for</h4>
-      <label class="container">Product name
-        <input type="checkbox" checked="unchecked">
-        <span class="checkmark"></span>
-      </label>
-      <label class="container">Category
-        <input type="checkbox" checked="unchecked">
-        <span class="checkmark"></span>
-      </label>
-      <label class="container">Description
-        <input type="checkbox" checked="unchecked">
-        <span class="checkmark"></span>
-      </label>
-      <label class="container">Price
-        <input type="checkbox" checked="unchecked">
-        <span class="checkmark"></span>
-      </label>
-      <label class="container">Postage
-        <input type="checkbox" checked="unchecked">
-        <span class="checkmark"></span>
-      </label>
+      <div data-role="main" class="ui-content">
+        <form method="post" action="/action_page_post.php">
+          <div data-role="rangeslider">
+            <label for="price-min">Price:</label>
+            <input type="range" name="price-min" id="price-min" value="200" min="0" max="1000">
+            <label for="price-max">Price:</label>
+            <input type="range" name="price-max" id="price-max" value="800" min="0" max="1000">
+          </div>
+        </form>
+      </div>
 
-    <div>
-      <input type="submit" data-inline="true" value="Submit">
-    </div>
+      <div>
+        Postage:<br>
+        <textarea name="postage_AS" id="postage_AS"></textarea>
+      </div>
 
-    <div>
+      <hr>
+
+      <div>
+        <h4>Choose which fields to search for</h4>
+        <label>ProductName
+          <input type="checkbox" checked="checked">
+          <span class="checkmark"></span>
+        </label>
+        <label>Category
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <label>Description
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <label>Price
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <label>Postage
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+
+      <div>
+        <input type="submit" data-inline="true" value="Search">
+      </div>
+
+    </form>
+  </div>
 
 
 </body>
