@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		
+		<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+	  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js">
+	  </script>
 		<title> Upload Item to biffbg </title>
 	</head>
+
 	<body>
 		<h3> IBAY </h3>
+		<hr>
+		
+		<div class="container">
 		<form action="upload.php" enctype="multipart/form-data" method="post">
 			<input name="MAX_FILE_SIZE" type="hidden" value="1000000" />
 			<p> db name
@@ -45,6 +52,7 @@
 			</p>
 
 		</form>
+	</div>
 		<hr />
 		[
 		<a href="view.php?dbname=group03">View Items</a>
