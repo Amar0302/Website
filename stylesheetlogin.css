@@ -84,19 +84,19 @@ body {
 		border-radius: 20px;
 
 }
-
+/*
 /***********
  * Tooltip *
  ***********/
 
-/* Tooltip container */
+/* Tooltip container *
 .tooltip {
 	position:relative;;
 	display: inline-block;
 	border-bottom: 1px dotted black;
 }
 
-/* Tooltip text */
+/* Tooltip text *
 .tooltip .tooltipText{
 	visibility: :hidden;
 	width: 120px;
@@ -114,7 +114,7 @@ body {
 	transition: opacity 0.4s;
 }
 
-/* Tooltip arrow */
+/* Tooltip arrow *
 .tooltip .tooltipText::after{
 	content: "";
 	position: relative;
@@ -130,3 +130,4 @@ body {
 	visibility: visible;
 	opacity: 1;
 }
+*/
