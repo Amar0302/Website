@@ -4,9 +4,7 @@ h1 {
 	text-decoration: underline;
 }
 
-body {
-	background-color: #ffffff;
-}
+
 
 .initial_button {
 	height: 50px;
@@ -84,6 +82,86 @@ body {
 		border-radius: 20px;
 
 }
+
+body{
+    margin:0;
+    font-family: sans-serif,arial, Helvetica;
+    background-color: #ffffff;
+  }
+  .topnav{
+    overflow:hidden;
+    background-color: black;
+  }
+  .topnav a{
+    float:right;
+    color:#f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    background-color: #333;
+  }
+  .topnav a:hover{
+    background-color: #808080;
+    color: black; <!-- text color-->
+  }
+  .topnav a.active{
+    background-color: green;
+    color:black;
+  }
+  .searchbar{
+    overflow: hidden;
+    background-color: a6a6a6;
+  }
+  .searchbar b{
+    float:left;
+    display: block;
+    color: #2196f3;
+    text-align: center;
+    padding: 20px 20px;
+    text-decoration: underline;
+    font-size: 17px;
+  }
+  .searchbar input[type=text]{
+    float: left;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+
+    margin-left: 600px;
+    font-size: 17px;
+  }
+
+  input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
 /*
 /***********
  * Tooltip *
