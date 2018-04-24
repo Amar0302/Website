@@ -8,5 +8,10 @@
   $max_price=$_POST["price-max"];
   $postage=$_POST["postage_AS"];
 
+  
+
+
+
+
 
 ?>
