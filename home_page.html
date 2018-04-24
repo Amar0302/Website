@@ -60,11 +60,41 @@
 	<a href="products.html">Products</a>
     <a class="active" href="home_page.html">Home</a>
   </div>
-  <center>
-  <p><font size='10' color='green'>iBay</font>
-  <font size='5'> - <em>eBay's most recent lawsuit recipient</em></font></p>
-  <hr/>
-  </center>
+<center>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<center>
+<div class="container">
+    <div class="row">    
+        <div class="col-xs-8 col-xs-offset-2">
+		    <div class="input-group">
+                <div class="input-group-btn search-panel">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    	<span id="search_concept">All</span> <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#contains">category1</a></li>
+                      <li><a href="#its_equal">category2</a></li>
+                      <li><a href="#greather_than">category3</a></li>
+                      <li><a href="#less_than">category4</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#all">category5</a></li>
+                    </ul>
+                </div>
+                <input type="hidden" name="search_param" value="all" id="search_param">         
+                <input type="text" class="form-control" name="x" placeholder="Search term...">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                </span>
+            </div>
+        </div>
+	</div>
+</div>
+</center>
 </head>
 
 <body>
