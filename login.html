@@ -45,12 +45,14 @@
 			<h1> Log in: <h1>
 		</div>
 		<div class="form_box">
+		<form method="POST" action="login.php">
 
-	  		<input type="text" placeholder="Username" name="email" value="">
+	  		<input type="text" placeholder="Username" name="userid" value="">
 	  		<input type= "password" placeholder="Password" name= "password">
 	  		<br><br>
 	  		<div class="buttons_container">
-		  		<input class="button" type="submit" value="Login"> 
+		  		<input id="button" class="button" type="submit" name="login" value="Login"> 
+		</form>		
 				<a class="button" href = "register.html" > Or Register</a>
 			</div>
 		</div>
