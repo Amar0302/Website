@@ -4,8 +4,6 @@ h1 {
 	text-decoration: underline;
 }
 
-
-
 .initial_button {
 	height: 50px;
 	width: 120px;
@@ -43,7 +41,7 @@ h1 {
 	filter : progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0 );
 }
 
-.login_buttons_container {
+.buttons_container {
 
 	display: flex;
 	flex-direction: column;
@@ -87,80 +85,121 @@ body{
     margin:0;
     font-family: sans-serif,arial, Helvetica;
     background-color: #ffffff;
-  }
-  .topnav{
-    overflow:hidden;
-    background-color: black;
-  }
-  .topnav a{
-    float:right;
-    color:#f2f2f2;
+}
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar a {
+    float: right;
+    font-size: 16px;
+    color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 17px;
-    background-color: #333;
-  }
-  .topnav a:hover{
-    background-color: #808080;
-    color: black; <!-- text color-->
-  }
-  .topnav a.active{
-    background-color: green;
-    color:black;
-  }
-  .searchbar{
+}
+
+.dropdown {
+    float: right;
     overflow: hidden;
-    background-color: a6a6a6;
-  }
-  .searchbar b{
-    float:left;
-    display: block;
-    color: #2196f3;
-    text-align: center;
-    padding: 20px 20px;
-    text-decoration: underline;
-    font-size: 17px;
-  }
-  .searchbar input[type=text]{
-    float: left;
-    padding: 6px;
-    border: none;
-    margin-top: 8px;
-
-    margin-left: 600px;
-    font-size: 17px;
-  }
-
-  input[type=text], select, textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
 }
 
-input[type=submit] {
-    background-color: #4CAF50;
+.dropdown .dropbtn {
+    font-size: 16px;    
+    border: none;
+    outline: none;
     color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
 }
 
-input[type=submit]:hover {
-    background-color: #45a049;
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: green;
 }
 
-.container {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
 }
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.topnav .search-container {
+  float: left;
+}
+
+.search-container {
+	margin-right: 200px;
+	margin-top: 50px;
+}
+
+.topnav input[type=text] {
+  padding: 8px;
+  margin-top: 10px;
+  font-size: 17px;
+  border: none;
+  border-radius:7px;
+}
+
+.topnav .search-container button {
+  float: left;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav, .search-container button:hover {
+  background: #ccc;
+
+}
+
+.advanced_search {
+	margin-top: 10px;
+	float: left;
+}
+@media screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: none;
+    margin-top: 50;
+  }
+  .topnav a, .topnav input[type=text], .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc; 
+
+ }
 
 /*
 /***********

@@ -1,64 +1,55 @@
 <!DOCTYPE HTML>
 <html>
-<style>
-body{
-    margin:0;
-    font-family: sans-serif,arial, Helvetica;
-  }
-  .topnav{
-    overflow:hidden;
-    background-color: black;
-  }
-  .topnav a{
-    float:right;
-    color:#f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    background-color: #333;
-  }
-  .topnav a:hover{
-    background-color: #808080;
-    color: black; <!-- text color-->
-  }
-  .topnav a.active{
-    background-color: green;
-    color:black;
-  }
-</style>
-
-<div class="topnav">
-    <a href="#about">About</a>
-    <a href="contactus.html">Contact us</a>
-	<a class="active" href="register.html">Register</a>
-    <a href="login.html">Login</a>
-    <a href="upload.html">Sell Item</a>
-	<a href="products.html">Products</a>
-	<a href="home_page.html">Home</a>
-
-  </div>
-  <center>
-  <p><font size='10' color='green'>iBay</font>
-  <font size='5'> - <em>eBay's most recent lawsuit recipient</em></font></p>
-  <hr/>
-  </center>
-
 	<head>
 		<title>Register</title>
-		<link type= "text/css" rel = "stylesheet" href = "stylesheetlogin.css" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	</head>
-	<body>
+    <link type= "text/css" rel = "stylesheet" href = "stylesheetlogin.css" />
+
+	 </head>
+	 <body>
+	<div class="navbar">
+  <div class="search-container">
+    <form action="/action_page.php">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+<div class="dropdown">
+    <button class="dropbtn">My iBay
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="upload.html">Upload Item</a>
+      <a href="#">My Items</a>
+      <a href="#">Summary</a>
+    </div>
+	
+
+  </div> 
+  <a href="#products">Products</a>
+  <a href="#about">About</a>
+  <a href="contactus.html">Contact us</a>
+  <a href="register.html">Register</a>
+  <a href="login.html">Log in</a>
+  <a href="home_page.html">Home</a>
+
+
+  </div> 
+  
+</div>
+      <center>
+        <p><font size='10' color='green'>iBay</font>
+        <font size='5'> - <em>eBay's most recent lawsuit recipient</em></font></p>
+        <hr/>
+      </center>
 		<div>
 			<h1> Registration:</h1>
 		</div>
 		<center>
-		<title> Register </title>
+	
 	</head>
-	<body> 
+	<body > 
 		<h3> IBAY </h3>
-		<form action="upload_member.php" enctype="multipart/form-data" method="post">
+		<form class="form_box" action="upload_member.php" enctype="multipart/form-data" method="post">
 			<input name="MAX_FILE_SIZE" type="hidden" value="1000000" />
 			<!--<p> db name 
 			<input name="dbname" type="text" value="group03"/>
@@ -83,21 +74,14 @@ body{
 			<p> Postcode:
 				<input name="postcode" id="postcode" type="text" />
 			</p>
-			<p>
-				<input type="submit" value="submit" />
-			</p>
+        <p>
+        <input class="button" type="submit" value="submit" />
+      </p>
+    
 
 		</form>
-		
+
 		</center>
-	</body>
 
 
-		<!--<picture>
-  			<source srcset="https://en.wikipedia.org/wiki/EBay" media="(max-width: 600px)">
-  			<source srcset="https://gadgets.ndtv.com/internet/news/ebay-india-to-expand-refurbished-products-portfolio-748361" media="(max-width: 1500px)">
-  			<source srcset="https://www.express.co.uk/life-style/life/944289/ebay-rare-coins-coin-two-pound-abolition-slave-trade-value-worth">
- 			<img src="https://gadgets.ndtv.com/internet/news/ebay-india-to-expand-refurbished-products-portfolio-748361" alt="Flowers" style="width:auto;">
-		</picture> -->
-	</body>
 </html>

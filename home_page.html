@@ -1,86 +1,51 @@
+<!DOCTYPE html>
 <html>
 <head>
-        <link type= "text/css" rel = "stylesheet" href = "stylesheetlogin.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link type= "text/css" rel = "stylesheet" href = "stylesheetlogin.css" />
 
+
+  
+</head>
+<body>
+
+<div class="navbar">
 
  
-  <div class="topnav">
-    <a href="#about">About</a>
-    <a href="contactus.html">Contact us</a>
-    <a href="register.html">Register</a>
-    <a href="login.html">Log in</a>
-    <a href="Advanced_Search.html">AS</a>
-    <a href="upload.html">Sell Item</a>
-	  <a href="products.html">Products</a>
-    <a class="active" href="home_page.html">Home</a>
-  </div>
+
+    <form action="/action_page.php">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+       <a class="advanced_search" href = "Advanced_Search.html" > Advanced Search</a>
+    </form>
+ 
+<div class="dropdown">
+    <button class="dropbtn">My iBay
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="upload.html">Upload Item</a>
+      <a href="#">My Items</a>
+      <a href="#">Summary</a>
+    </div>
+	
+
+  </div> 
+
+  <a href="#products">Products</a>
+  <a href="#about">About</a>
+  <a href="contactus.html">Contact us</a>
+  <a href="register.html">Register</a>
+  <a href="login.html">Log in</a>
+  <a href="home_page.html">Home</a>
+  </div> 
+  
+</div>
 <center>
   <p><font size='10' color='green'>iBay</font>
-  <font size='5'> - <em>eBay's most recent lawsuit recipient</em></font></p>
+  <font  size='5'> - <em>eBay's most recent lawsuit recipient</em></font></p>
   <hr/>
   </center>
 
-	<center>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<!-- jQuery library -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-	<!-- Latest compiled JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<center>
-<div class="container">
-    <div class="row">
-        <div class="col-xs-8 col-xs-offset-2">
-		    <div class="input-group">
-                <div class="input-group-btn search-panel">
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                    	<span id="search_concept">All</span> <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu">
-                      <li><a href="#contains">category1</a></li>
-                      <li><a href="#its_equal">category2</a></li>
-                      <li><a href="#greather_than">category3</a></li>
-                      <li><a href="#less_than">category4</a></li>
-                      <li class="divider"></li>
-                      <li><a href="#all">category5</a></li>
-                    </ul>
-                </div>
-                <input type="hidden" name="search_param" value="all" id="search_param">
-                <input type="text" class="form-control" name="x" placeholder="Search term...">
-                <span class="input-group-btn">
-                    <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
-                </span>
-            </div>
-        </div>
-	</div>
-</div>
-</center>
-</head>
-
-<body>
-<center>
-  <p>
-    <font-size='20'>eBay's most recent lawsuit recipient</font>
-    <font <img src='tempLogo1.jpg' alt='Ibay Logo'>
-  </p>
-
-  <div>
-    <h2 class='subheader1'>Top Searches</h2>
-  </div>
-  <div>
-  </div>
-  <hr/>
-  <div>
-    <h2 class='subheader2'>Top Users</h2>
-  </div>
-  <div>
-  </div>
-  <hr/>
-  <div>
-    <h2 class='subheader2'>third_sub_header</h2>
-  </div>
-  <div>
-  </div>
-  </center>
 </body>
 </html>
