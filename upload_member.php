@@ -1,10 +1,12 @@
 <?php
     require_once('globals.php');
     error_reporting(E_ALL);
-
+	
+	
     function assertValidUpload($code)
     {
-        if ($code == UPLOAD_ERR_OK) {
+
+         if ($code == UPLOAD_ERR_OK) {
             return;
         }
  
@@ -43,36 +45,16 @@
  
     $errors = array();
  
-    try {
-        if (!array_key_exists('imagefile', $_FILES)) {
-            throw new Exception('Image not found in uploaded data');
-        }
+   
  
-        $image = $_FILES['imagefile'];
- 
-        // ensure the file was successfully uploaded
-        assertValidUpload($image['error']);
- 
-        if (!is_uploaded_file($image['tmp_name'])) {
-            throw new Exception('File is not an uploaded file');
-        }
- 
-        $info = getImageSize($image['tmp_name']);
- 
-        if (!$info) {
-            throw new Exception('File is not an image');
-        }
-    }
-    catch (Exception $ex) {
-        $errors[] = $ex->getMessage();
-    }
- 
+    if (count($errors) == 0) {
+        // no errors, so insert the image
  
 		$query = sprintf(
-            "insert into iBayMembers (userId, password, name, email, address, postcode)
-                values (%d, '%s', '%s', '%s', '%s', '%s', '%s')",
+            "insert into iBayMembers (userid, password, name, email, address, postcode)
+                values (%d, '%s', '%s', '%s', '%s', '%s')",
             '', 					// the itemId is auto increment 
-            $_REQUEST['userId'],
+            $_REQUEST['userid'],
             $_REQUEST['password'],
             $_REQUEST['name'],
             $_REQUEST['email'],
@@ -83,17 +65,27 @@
 		if (PEAR::isError($result)){die($result->getMessage());}  
 
         //$id = (int) mysql_insert_id($db);
- 		$id = $db->lastInsertID(); //'iBayItems', 'itemId'
+ 		$id = $db->lastInsertID(); //'iBayMembers', 'userid'
  		if (PEAR::isError($id)) {die($id->getMessage());}
  		
- 		
+ 		$query = sprintf(
+            "insert into iBayImages (imageId, image, mimeType, imageSize, itemId )
+                values (%d, '%s', '%s', %d, %d)",
+            '',					// the imageId is auto increment
+            addslashes(
+                file_get_contents($image['tmp_name'])
+            ),
+			addslashes($info['mime']),
+            $image['size'],
+            $id					// the itemId from inserting the item is used in the images table to retrieve the asociated image(s)
+        );
     	$result = $db->query($query);
 		if (PEAR::isError($result)){die($result->getMessage());}  
 
         // finally, redirect the user to view the new image
         header("Location: view1.php?dbname=$dbname&itemId=" . $id);
         exit;
-    
+    }
 ?>
 <html>
     <head>
