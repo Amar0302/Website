@@ -51,10 +51,9 @@
         // no errors, so insert the image
  
 		$query = sprintf(
-            "insert into iBayMembers (userid, password, name, email, address, postcode)
-                values (%d, '%s', '%s', '%s', '%s', '%s')",
+            "insert into iBayMembers (userid ,password, name, email, address, postcode)
+                values ('%d', '%s', '%s', '%s', '%s', '%s')",
             '', 					// the itemId is auto increment 
-            $_REQUEST['userid'],
             $_REQUEST['password'],
             $_REQUEST['name'],
             $_REQUEST['email'],
