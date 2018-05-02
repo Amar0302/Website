@@ -2,36 +2,50 @@
 <html>
 
 	<head>
+   <title> Upload Item to iBay </title>
+   <link type= "text/css" rel = "stylesheet" href = "stylesheetlogin.css" />
+  </head>
 
-  <title> Upload Item to biffbg </title>
-  		 <link type= "text/css" rel = "stylesheet" href = "stylesheetlogin.css" />
-
-
-  <div class="topnav">
-    <a href="#about">About</a>
-    <a href="contactus.html">Contact us</a>
-    <a href="register.html">Register</a>
-    <a href="login.html">Log in</a>
-	<a class="active" href="upload.html">Sell Item</a>
-	<a href="products.html">Products</a>
-	<a href="home_page.html">Home</a>
+	<body>
+	<div class="navbar">
+<div class="search-container">
+    <form action="/action_page.php">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
   </div>
+<div class="dropdown">
+    <button class="dropbtn">My iBay
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="upload.html">Upload Item</a>
+      <a href="#">My Items</a>
+      <a href="#">Summary</a>
+    </div>
+	
+  </div> 
+  <a href="#products">Products</a>
+  <a href="#about">About</a>
+  <a href="contactus.html">Contact us</a>
+  <a href="register.html">Register</a>
+  <a href="login.html">Log in</a>
+  <a href="home_page.html"></a>
+  </div> 
+  
+</div>
 
   <center>
   <p><font size='10' color='green'>iBay</font>
   <font size='5'> - <em>eBay's most recent lawsuit recipient</em></font></p>
-  <hr/>
+ <hr/>
+
   </center>
-</head>
-<center>
 
 
-	<body>
-		<h3> IBAY </h3>
-		<hr>
 
 		<div class="container">
-		<form action="upload.php" enctype="multipart/form-data" method="post">
+		<form class="form_box" action="upload.php" enctype="multipart/form-data" method="post">
 			<input name="MAX_FILE_SIZE" type="hidden" value="1000000" />
 			<p> db name
 			<input name="dbname" type="text" value="group03"/>
@@ -66,7 +80,7 @@
 				<input name="imagefile" type="file" />
 			</p>
 			<p>
-				<input type="submit" value="submit" />
+				<input class="button" type="submit" value="submit" />
 			</p>
 
 		</form>
