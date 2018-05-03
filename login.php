@@ -1,8 +1,5 @@
 <?php
-define('$hostname','localhost');
-define('$dbname', 'group03');
-define('$username', 'group03');
-define('$password','CtIEfrSX34');
+require_once('globals.php');
 
 
 $con=mysql_connect($hostname,$username,$password) or die("Failed to connect to MySQL: " . mysql_error());

@@ -3,7 +3,11 @@
 <head>
    <link type= "text/css" rel = "stylesheet" href = "stylesheetlogin.css" />
 
-
+<script> 
+	function clickAlert() {
+		alert("You will be contacted to discuss your query in the next 24 hours");
+		}
+</script>		
   
 </head>
 <body>
@@ -70,7 +74,7 @@
     <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
 </p>
 <p>
-    <input class="button" type="submit" value="Submit">
+    <input class="button" type="button" onclick="clickAlert()" value="Submit">
   </p>
   </form>
 </div>
