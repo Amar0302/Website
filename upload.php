@@ -103,7 +103,8 @@
 		if (PEAR::isError($result)){die($result->getMessage());}  
 
         // finally, redirect the user to view the new image
-        header("Location: view1.php?dbname=$dbname&itemId=" . $id);
+        header("Location: home_page.html?dbname=$dbname&itemId=" . $id);
+		echo "YOUR PRODUCT HAS SUCCESSFULLY BEEN ADDED!";
         exit;
     }
 ?>
