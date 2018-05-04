@@ -14,20 +14,15 @@ if(!empty($_GET['email']))   //checking the 'userid' which is from Sign-In.html,
 	$query = mysql_query("SELECT *  FROM iBayMembers where email = '$_GET[email]' AND password = '$_GET[password]'") or die(mysql_error());
 	
 	$row = mysql_fetch_array($query) or die(mysql_error());
-
+	
 	if(!empty($row['email']) AND !empty($row['password']))
 	{
 		$_SESSION['userid'] = $row['password'];
-		echo "YAY WORKS";
-		
-		header("Location: home_page.php");
-			exit;
+		echo "SUCCESSFULLY LOGIN TO USER PROFILE PAGE...";
 
 	}
 	else
 	{
-		/*header("Location: login_html.php");
-			exit;*/
 		echo "SORRY... YOU ENTERD WRONG ID AND PASSWORD... PLEASE RETRY...";
 	}
 }
@@ -41,3 +36,4 @@ if(isset($_GET['login']))
 ?>
 
 
+Read more: http://mrbool.com/how-to-create-a-login-page-with-php-and-mysql/28656#ixzz5ELjM4Kky

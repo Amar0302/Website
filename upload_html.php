@@ -7,33 +7,12 @@
   </head>
 
 	<body>
-	<div class="navbar">
-<div class="search-container">
-    <form action="/action_page.php">
-      <input type="text" placeholder="Search.." name="search">
-      <button type="submit"><i class="fa fa-search"></i></button>
-    </form>
-  </div>
-<div class="dropdown">
-    <button class="dropbtn">My iBay
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="upload.html">Upload Item</a>
-      <a href="#">My Items</a>
-      <a href="#">Summary</a>
-    </div>
 	
-  </div> 
-  <a href="#products">Products</a>
-  <a href="#about">About</a>
-  <a href="contactus.html">Contact us</a>
-  <a href="register.html">Register</a>
-  <a href="login.html">Log in</a>
-  <a href="home_page.html"></a>
-  </div> 
-  
-</div>
+	<?php
+	include 'navigation.php';
+	?>
+	
+	
 
   <center>
   <p><font size='10' color='green'>iBay</font>
@@ -57,9 +36,9 @@
 				<input name="title" id="title" type="text" />
 			</p>
 			<p> Category
-				<select name="category" id="category">
-					<option value="Antiques">Antiques</option>
-					<option value="Electronics">Electronics</option>
+				<select>
+					<option value="antiques">Antiques</option>
+					<option value="Eelectronics">Electronics</option>
 					<option value="Fashion">Fashion</option>
 					<option value="Home & Garden">Home & Garden</option>
 					<option value="Sports">Sports</option>
