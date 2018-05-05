@@ -115,6 +115,8 @@ if (!$query) {
 				<th>Description</th>
 				<th>Price</th>
 				<th>Postage</th>
+				<th>Start</th>
+				<th>Finish</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -131,6 +133,8 @@ if (!$query) {
 					<td>'.$row['description'].'</td>
 					<td>'.$row['price'].'</td>
 					<td>'.$row['postage'].'</td>
+					<td>'.$row['start'].'</td>
+					<td>'.$row['finish'].'</td>
 				</tr>';
 			$no++;
 		}?>
