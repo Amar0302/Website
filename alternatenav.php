@@ -20,7 +20,7 @@
 	
 
   </div> 
-  <a href="#products">Products</a>
+  <a href="view.php">Products</a>
   <a href="#about">About</a>
   <a href="contactus.html">Contact us</a>
   <a href="register.html">Register</a>
