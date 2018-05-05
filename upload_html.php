@@ -36,9 +36,9 @@
 				<input name="title" id="title" type="text" />
 			</p>
 			<p> Category
-				<select>
-					<option value="antiques">Antiques</option>
-					<option value="Eelectronics">Electronics</option>
+				<select name="category" id="title">
+					<option value="Antiques">Antiques</option>
+					<option value="Electronics">Electronics</option>
 					<option value="Fashion">Fashion</option>
 					<option value="Home & Garden">Home & Garden</option>
 					<option value="Sports">Sports</option>
