@@ -53,7 +53,7 @@
 
             </ul>
 <hr />
-[ <a href="upload.html">Upload an item</a> ] [ <a href="view.php">View items</a> ]
+[ <a href="upload_html.php">Upload an item</a> ] [ <a href="view.php">View items</a> ]
  </center>
 </body>
 </html>
