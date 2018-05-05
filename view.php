@@ -14,27 +14,46 @@
 ?>
 <html>
     <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<link type= "text/css" rel = "stylesheet" href = "stylesheetlogin.css" />
+
+
         <title>iBay Uploaded Items</title>
     </head>
     <body>
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	<?php
+	include 'navigation.php';
+	?>
+
+	<center>
+  <p><font size='10' color='green'>iBay</font>
+  <font  size='5'> - <em>eBay's most recent lawsuit recipient</em></font></p>
+  <hr/>
+ 
         <div>
             <h1>iBay Uploaded Items</h1>
  
- 
+ 	<?php
+	include 'get data.php';
+	?>
+
 
             <ul>
-<?php
-	if ($result->numRows() == 0) { 
-		echo "<li>No uploaded images found</li>";
-	} else while ($row = $result->fetchRow()) { 
-		echo "<li>";
-		echo "<img src='file.php?imageId={$row[strtolower('imageId')]}' />";
-		echo "{$row[strtolower('itemId')]}, {$row[strtolower('userId')]}, {$row['title']}, {$row['category']}, {$row['description']}, {$row['price']}, {$row['postage']}, {$row[strtolower('imageId')]}";
-		echo "</li>";
-	}
-?>
+
             </ul>
 <hr />
 [ <a href="upload.html">Upload an item</a> ] [ <a href="view.php">View items</a> ]
+ </center>
 </body>
 </html>

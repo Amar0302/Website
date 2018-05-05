@@ -22,7 +22,7 @@ if (isset($_SESSION['email'])){
 				<a href="#">Summary</a>
 			</div>
 		</div> 
-		<a href="#products">Products</a>
+		<a href="view.php">Products</a>
 		<a href="#about">About</a>
 		<a href="contactus_html.php">Contact us</a>
 		<a href="login_html.php">Log Out</a>
@@ -40,7 +40,7 @@ if (isset($_SESSION['email'])){
   </div>
 	
    
-  <a href="#products">Products</a>
+  <a href="view.php">Products</a>
   <a href="#about">About</a>
   <a href="contactus.php">Contact us</a>
   <a href="register_html.php">Register</a>
