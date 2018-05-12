@@ -16,8 +16,8 @@ if (isset($_SESSION['name'])){
 				</button>
 			<div class="dropdown-content">
 				<a href="upload_html.php">Upload Item</a>
-				<a href="#">My Items</a>
-				<a href="#">Summary</a>
+				<a href="myitems.php">My Items</a>
+				<a href="summary.php">Summary</a>
 			</div>
 		</div> 
 		<a href="view.php">Products</a>
