@@ -15,9 +15,9 @@ if(!empty($_GET['email']))   //checking the 'userid' which is from Sign-In.html,
 	
 	$row = mysql_fetch_array($query) or die(mysql_error());
 
-	if(!empty($row['email']) AND !empty($row['password']))
+	if(!empty($row['name']) AND !empty($row['password']))
 	{
-		$_SESSION['userid'] = $row['password'];
+		$_SESSION['name'] = $row['name'];
 		echo "YAY WORKS";
 		
 		header("Location: home_page.php");
@@ -26,9 +26,9 @@ if(!empty($_GET['email']))   //checking the 'userid' which is from Sign-In.html,
 	}
 	else
 	{
-		/*header("Location: login_html.php");
-			exit;*/
-		echo "SORRY... YOU ENTERD WRONG ID AND PASSWORD... PLEASE RETRY...";
+		header("Location: home_page.php");
+			exit;
+		/*echo "SORRY... YOU ENTERD WRONG ID AND PASSWORD... PLEASE RETRY...";*/
 	}
 }
 }
