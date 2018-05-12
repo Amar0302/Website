@@ -2,15 +2,13 @@
     session_start();
      
 
-if (isset($_SESSION['email'])){ 
+if (isset($_SESSION['name'])){ 
 ?>
 
 	<div class="navbar">
 		<div class="search-container">
-			<form action="/action_page.php">
-				<input type="text" placeholder="Search.." name="search">
-				<button type="submit"><i class="fa fa-search"></i></button>
-			</form>
+		<button type="button" onclick="window.location.href='search.php'">Search!</button>
+		<p> Welcome: <?php echo "{$_SESSION['name']}" ?> <p>
 		</div>
 		<div class="dropdown">
 				<button class="dropbtn">My iBay
@@ -25,18 +23,14 @@ if (isset($_SESSION['email'])){
 		<a href="view.php">Products</a>
 		<a href="#about">About</a>
 		<a href="contactus_html.php">Contact us</a>
-		<a href="login_html.php">Log Out</a>
+		<a href="logout.php">Log Out</a>
 		<a href="home_page.php">Home</a>
 	</div> 
   
 <?php } else { ?>
 <div class="navbar">
   <div class="search-container">
-    <form action="/action_page.php">
-      <input type="text" placeholder="Search.." name="search">
-      <button type="submit"><i class="fa fa-search"></i></button>
-    </form>
-	<p> "$_SESSION["userid"]"; <p>
+  <button type="button" onclick="window.location.href='search.php'">Search!</button>
   </div>
 	
    
