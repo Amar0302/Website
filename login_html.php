@@ -18,7 +18,19 @@
 		<div>
 			<h1> Log in: <h1>
 		</div>
+
 		<div class="form_box">
+				<?php 
+        $urlParameters = array();
+        parse_str($_SERVER['QUERY_STRING'], $urlParameters);
+        
+        if (!empty($urlParameters) && $urlParameters['incorrectLogin'] == true){
+         /* echo "<p class = "error_message;" > Incorrect details</p>" ;*/
+          /*echo "<p class=\\"error_message\\">" . $error_message . "</p>";
+          /*echo '<p class = "'. $error_message .'" */
+          echo '<p style=color:red ;> <i>Incorrect details, please try again </i></p>' ;
+        }
+    ?>
 		<form method="GET" action="login.php">
 
 	  		<input type="text" placeholder="Email" name="email" value="">
@@ -26,9 +38,10 @@
 	  		<br><br>
 	  		<div class="buttons_container">
 		  		<input id="button" class="button" type="submit" name="login" value="Login"> 
-		</form>		
+				
 				<a class="button" href = "register_html.php" > Or Register</a>
 			</div>
+		</form>
 		</div>
 
 
