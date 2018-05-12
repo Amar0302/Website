@@ -13,22 +13,21 @@ if(!empty($_GET['email']))   //checking the 'userid' which is from Sign-In.html,
 
 	$query = mysql_query("SELECT *  FROM iBayMembers where email = '$_GET[email]' AND password = '$_GET[password]'") or die(mysql_error());
 	
-	$row = mysql_fetch_array($query) or die(mysql_error());
+	$row = mysql_fetch_array($query);
 
-	if(!empty($row['email']) AND !empty($row['password']))
+	if(!empty($row['name']) AND !empty($row['password']))
 	{
-		$_SESSION['userid'] = $row['password'];
-		echo "YAY WORKS";
-		
+		$_SESSION['name'] = $row['name'];
 		header("Location: home_page.php");
-			exit;
+	
 
 	}
 	else
 	{
-		/*header("Location: login_html.php");
-			exit;*/
-		echo "SORRY... YOU ENTERD WRONG ID AND PASSWORD... PLEASE RETRY...";
+		header("Location: login_html.php?incorrectLogin=true");
+	exit;
+		
+
 	}
 }
 }
