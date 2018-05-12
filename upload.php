@@ -89,21 +89,23 @@
  		if (PEAR::isError($id)) {die($id->getMessage());}
  		
  		$query = sprintf(
-            "insert into iBayImages (imageId, image, mimeType, imageSize, itemId )
-                values (%d, '%s', '%s', %d, %d)",
+            "insert into iBayImages (imageId, image, mimeType, imageSize, itemId, image2 )
+                values (%d, '%s', '%s', %d, %d, '%s')",
             '',					// the imageId is auto increment
             addslashes(
                 file_get_contents($image['tmp_name'])
+				/*file_get_contents($image2['tmp_name'])*/
             ),
 			addslashes($info['mime']),
             $image['size'],
+			$image2['size'],
             $id					// the itemId from inserting the item is used in the images table to retrieve the asociated image(s)
         );
     	$result = $db->query($query);
 		if (PEAR::isError($result)){die($result->getMessage());}  
 
         // finally, redirect the user to view the new image
-        header("Location: view1.php?dbname=$dbname&itemId=" . $id);
+        header("Location: home_page.php?dbname=$dbname&itemId=" . $id);
         exit;
     }
 ?>
