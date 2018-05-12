@@ -2,7 +2,7 @@
     session_start();
      
 
-if (isset($_SESSION['email'])){ 
+if (isset($_SESSION['userid'])){ 
 ?>
 
 	<div class="navbar">
@@ -11,6 +11,7 @@ if (isset($_SESSION['email'])){
 				<input type="text" placeholder="Search.." name="search">
 				<button type="submit"><i class="fa fa-search"></i></button>
 			</form>
+			<p> Welcome: $_SESSION['userid']; <p>
 		</div>
 		<div class="dropdown">
 				<button class="dropbtn">My iBay
@@ -36,7 +37,7 @@ if (isset($_SESSION['email'])){
       <input type="text" placeholder="Search.." name="search">
       <button type="submit"><i class="fa fa-search"></i></button>
     </form>
-	<p> "$_SESSION["userid"]"; <p>
+	
   </div>
 	
    
