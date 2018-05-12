@@ -18,18 +18,15 @@ if(!empty($_GET['email']))   //checking the 'userid' which is from Sign-In.html,
 	if(!empty($row['name']) AND !empty($row['password']))
 	{
 		$_SESSION['name'] = $row['name'];
-
 		header("Location: home_page.php");
 	
 
 	}
 	else
 	{
-
 		header("Location: login_html.php?incorrectLogin=true");
 	exit;
 		
-
 
 	}
 }

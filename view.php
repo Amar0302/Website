@@ -7,8 +7,8 @@
     	' images.imageId '.
     	' FROM iBayItems AS items '.
     	' LEFT JOIN iBayImages AS images ON items.itemId = images.itemId '.
-    	' ORDER BY items.itemId '
-    );
+    	' ORDER BY items.itemId ');
+
     $result = $db->query($query);
 	if (PEAR::isError($result)){die($result->getMessage());}  
 ?>
@@ -45,6 +45,14 @@
             <h1>iBay Uploaded Items</h1>
  
  	<?php
+    $urlParameters = array();
+    parse_str($_SERVER['QUERY_STRING'], $urlParameters);
+    $searchq = '';
+    if(!empty($urlParameters)) {
+        $searchq = $urlParameters['search'];
+    }
+
+
 	include 'get data.php';
 	?>
 
