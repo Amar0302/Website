@@ -1,0 +1,113 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js">
+  </script>
+
+  <nav class="topnav">
+    <a href="#about">About</a>
+    <a href="contactus.html">Contact us</a>
+    <a href="register.html">Register</a>
+    <a href="login.html">Log in</a>
+    <a href="Advanced_Search.html">AS</a>
+    <a href="upload.html">Sell Item</a>
+	  <a href="products.html">Products</a>
+    <a class="active" href="home_page.html">Home</a>
+  </nav>
+
+  <h1>Advanced Search</h1>
+  <hr>
+</head>
+<body>
+  <div class="container">
+    <form <action="advanced_search.php" enctype="multipart/form-data" method="post">
+      <div>
+        Product name:<br>
+        <input type="text" name="title_AS"><br>
+      </div>
+
+      <div>
+        Category:<br>
+        <select name="category_AS">
+          <option value="antiques">Antiques</option>
+          <option value="Eelectronics">Electronics</option>
+          <option value="Fashion">Fashion</option>
+          <option value="Home & Garden">Home & Garden</option>
+          <option value="Sports">Sports</option>
+          <option value="Toys & Games">Toys & Games</option>
+          <option value="Other">Other</option>
+        </select><br>
+      </div>
+
+      <div>
+        Words to look for in the description:<br>
+        <textarea name="description_AS" id="description_AS"></textarea>
+      </div>
+
+      <div data-role="main" class="ui-content">
+        <form method="post" action="/action_page_post.php">
+          <div data-role="rangeslider">
+            <label for="price-min">Price:</label>
+            <input type="range" name="price-min" id="price-min" value="200" min="0" max="1000">
+            <label for="price-max">Price:</label>
+            <input type="range" name="price-max" id="price-max" value="800" min="0" max="1000">
+          </div>
+        </form>
+      </div>
+
+      <div>
+        Postage:<br>
+        <textarea name="postage_AS" id="postage_AS"></textarea>
+      </div>
+
+      <hr>
+
+<!--
+      <div>
+        <h4>Choose which fields to search for</h4>
+        <label>ProductName
+          <input type="checkbox" checked="checked">
+          <span class="checkmark"></span>
+        </label>
+        <label>Category
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <label>Description
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <label>Price
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <label>Postage
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+-->
+
+      <hr>
+
+      <div>
+        <h4>Choose which fields to search for</h4>
+        <label><input type="radio" name="search_for" value="product_name">Product Name</label>
+        <label><input type="radio" name="search_for" value="category">Category</label>
+        <label><input type="radio" name="search_for" value="description">Description</label>
+        <label><input type="radio" name="search_for" value="price">Price</label>
+        <label><input type="radio" name="search_for" value="postage">Postage</label>
+      </div>
+
+      <div>
+        <input type="submit" data-inline="true" value="Search">
+      </div>
+
+    </form>
+  </div>
+
+
+</body>
+</html>

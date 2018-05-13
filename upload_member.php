@@ -82,7 +82,7 @@
 		if (PEAR::isError($result)){die($result->getMessage());}  
 
         // finally, redirect the user to view the new image
-        header("Location: view1.php?dbname=$dbname&itemId=" . $id);
+        header("Location: login_html.php");
         exit;
     }
 ?>
