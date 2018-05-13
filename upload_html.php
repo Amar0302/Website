@@ -29,9 +29,6 @@
 			<p>
 			<input name="dbname" type="hidden" value="group03"/>
 			</p>
-			<p> userId
-				<input name="userId" id="userId" type="text" />
-			</p>
 			<p> Title
 				<input name="title" id="title" type="text" />
 			</p>
@@ -50,11 +47,10 @@
 				<textarea name="description" id="description" rows="5" cols="45"></textarea>
 			</p>
 			<p> Price
-				<input name="price" id="number" type="number" min="0.01" step="0.01" />
+				<input name="price" id="number" type="number" min="0.01" step="0.01"  placeholder="0.00" />
 			</p>
 			<p> Postage
-				<input name="postage" id="number" type="number" />
-			</p>
+				<input name="postage" id="number" type="number" min="0.00" step="0.01" placeholder="0.00" />
 			<p> Images
 				<input name="imagefile" type="file" />
 			</p>

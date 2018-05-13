@@ -19,13 +19,17 @@ if (isset($_SESSION['name'])){
 				</button>
 			<div class="dropdown-content">
 				<a href="upload_html.php">Upload Item</a>
-				<a href="#">My Items</a>
+
+				<a href="my_ibay.php">My Items</a>
+
 				<a href="#">Summary</a>
 			</div>
 		</div> 
 		<a href="view.php">Products</a>
+
 		<a href="about.php">About</a>
 		<a href="contactus_html.php">Contact us</a>
+
 		<a href="logout.php">Log Out</a>
 		<a href="home_page.php">Home</a>
 	</div> 
@@ -43,7 +47,7 @@ if (isset($_SESSION['name'])){
 	
    
   <a href="view.php">Products</a>
-  <a href="about.php">About</a>
+  <a href="#about">About</a>
   <a href="contactus.php">Contact us</a>
   <a href="register_html.php">Register</a>
   <a href="login_html.php">Log in</a>

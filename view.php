@@ -21,17 +21,7 @@
         <title>iBay Uploaded Items</title>
     </head>
     <body>
-	
-	
 
-	
-	
-	
-	
-	
-	
-	
-	
 	<?php
 	include 'navigation.php';
 	?>
@@ -45,15 +35,20 @@
             <h1>iBay Uploaded Items</h1>
  
  	<?php
-    $urlParameters = array();
-    parse_str($_SERVER['QUERY_STRING'], $urlParameters);
-    $searchq = '';
-    if(!empty($urlParameters)) {
-        $searchq = $urlParameters['search'];
-    }
 
+        $searchq = '';
+        $orderBy = 'itemId';
+        if(isset($_GET["search"])) {
+            $searchq = $_GET['search'];
+        }
+        if(isset($_GET["orderBy"])) {
+            $orderBy = $_GET['orderBy'];
+        }
 
-	include 'get data.php';
+       $sql = "SELECT * FROM iBayItems WHERE title like '%$searchq%' OR category LIKE '%$searchq%' OR description LIKE '%$searchq%' ORDER BY $orderBy";
+
+	   include 'get data.php';
+
 	?>
 
 
