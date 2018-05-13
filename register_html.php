@@ -3,11 +3,6 @@
 	<head>
 		<title>Register</title>
     <link type= "text/css" rel = "stylesheet" href = "stylesheetlogin.css" />
-	<script> 
-	function clickAlertRegister() {
-		alert("You are now registered with iBay");
-		}
-</script>
 
 	 </head>
 	 <body>
@@ -54,9 +49,9 @@
 				<input name="postcode" id="postcode" type="text" />
 			</p>
         <p>
-        <input class="button" type="submit" value="submit" onclick="clickAlertRegister()" />
+        <input class="button" type="submit" value="submit" />
       </p>
-		 
+    
 
 		</form>
 

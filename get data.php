@@ -9,8 +9,7 @@ if (!$conn) {
 	die ('Failed to connect to MySQL: ' . mysqli_connect_error());	
 }
 
-$sql = 'SELECT * 
-		FROM iBayItems';
+$sql = "SELECT * FROM iBayItems WHERE title LIKE '%$searchq%'";
 		
 $query = mysqli_query($conn, $sql);
 
@@ -103,7 +102,6 @@ if (!$query) {
 	</style>
 </head>
 <body>
-	<h1>Table 1</h1>
 	<table class="data-table">
 		<caption class="title">Products</caption>
 		<thead>
@@ -121,26 +119,32 @@ if (!$query) {
 		</thead>
 		<tbody>
 		<?php
-		$no 	= 1;
-		$total 	= 0;
-		while ($row = mysqli_fetch_array($query))
-		{
-			echo '<tr>
-					<td>'.$row['itemId'].'</td>
-					<td>'.$row['userId'].'</td>
-					<td>'.$row['title'].'</td>
-					<td>'.$row['category'].'</td>
-					<td>'.$row['description'].'</td>
-					<td>'.$row['price'].'</td>
-					<td>'.$row['postage'].'</td>
-					<td>'.$row['start'].'</td>
-					<td>'.$row['finish'].'</td>
-				</tr>';
-			$no++;
-		}?>
+			$no 	= 1;
+			$total 	= 0;
+			while ($row = mysqli_fetch_array($query))
+			{
+				echo '<tr>
+						<td>'.$row['itemId'].'</td>
+						<td>'.$row['userId'].'</td>
+						<td>'.$row['title'].'</td>
+						<td>'.$row['category'].'</td>
+						<td>'.$row['description'].'</td>
+						<td>'.$row['price'].'</td>
+						<td>'.$row['postage'].'</td>
+						<td>'.$row['start'].'</td>
+						<td>'.$row['finish'].'</td>
+					</tr>';
+				$no++;
+			} 
+			$count = mysqli_num_rows($query);
+			if ($count == 0 ) {
+				echo '<p style=color:red ;> <i>No results, please try again </i></p>';
+			}	
+		?>
 		</tbody>
 		<tfoot>
 			</tfoot>
 	</table>
+
 </body>
 </html>

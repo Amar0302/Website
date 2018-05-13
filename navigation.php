@@ -2,25 +2,16 @@
     session_start();
      
 
-
 if (isset($_SESSION['name'])){ 
-
 ?>
 
 	<div class="navbar">
 		<div class="search-container">
-
-			<form action="/action_page.php">
+			<form action="view.php">
 				<input type="text" placeholder="Search.." name="search">
-				<button type="submit"><i class="fa fa-search"></i></button>
+				<input type="submit" value=">>" />
 			</form>
-			<p> Welcome: $_SESSION['userid']; <p>
-
-    
-		<button type="button" onclick="window.location.href='search.php'">Search!</button>
-		<p> Welcome: <?php echo "{$_SESSION['name']}" ?> <p>
-
-    
+			<p> Welcome: <?php echo "{$_SESSION['name']}" ?> <p>
 		</div>
 		<div class="dropdown">
 				<button class="dropbtn">My iBay
@@ -28,15 +19,13 @@ if (isset($_SESSION['name'])){
 				</button>
 			<div class="dropdown-content">
 				<a href="upload_html.php">Upload Item</a>
-				<a href="myitems.php">My Items</a>
-				<a href="summary.php">Summary</a>
+				<a href="#">My Items</a>
+				<a href="#">Summary</a>
 			</div>
 		</div> 
 		<a href="view.php">Products</a>
-
-		<a href="about.php">About</a>
-		<a href="contactus.php">Contact us</a>
-
+		<a href="#about">About</a>
+		<a href="contactus_html.php">Contact us</a>
 		<a href="logout.php">Log Out</a>
 		<a href="home_page.php">Home</a>
 	</div> 
@@ -44,17 +33,17 @@ if (isset($_SESSION['name'])){
 <?php } else { ?>
 <div class="navbar">
   <div class="search-container">
-    <form action="/action_page.php">
+    <form action="view.php">
       <input type="text" placeholder="Search.." name="search">
-      <button type="submit"><i class="fa fa-search"></i></button>
-    </form>
-  <button type="button" onclick="window.location.href='search.php'">Search!</button>
+	  <input type="submit" value=">>" />
 
+    </form>
+	
   </div>
 	
    
   <a href="view.php">Products</a>
-  <a href="about.php">About</a>
+  <a href="#about">About</a>
   <a href="contactus.php">Contact us</a>
   <a href="register_html.php">Register</a>
   <a href="login_html.php">Log in</a>
