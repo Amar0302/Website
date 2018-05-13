@@ -24,7 +24,7 @@ if (isset($_SESSION['name'])){
 			</div>
 		</div> 
 		<a href="view.php">Products</a>
-		<a href="#about">About</a>
+		<a href="about.php">About</a>
 		<a href="contactus_html.php">Contact us</a>
 		<a href="logout.php">Log Out</a>
 		<a href="home_page.php">Home</a>
@@ -43,7 +43,7 @@ if (isset($_SESSION['name'])){
 	
    
   <a href="view.php">Products</a>
-  <a href="#about">About</a>
+  <a href="about.php">About</a>
   <a href="contactus.php">Contact us</a>
   <a href="register_html.php">Register</a>
   <a href="login_html.php">Log in</a>
