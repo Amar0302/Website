@@ -18,5 +18,16 @@ require_once('globals.php');
 
 	<center>
   <p><font size='10' color='green'>My iBay</font>
-  
+
+  	<?php
+        $useridq = '';
+        if(isset($_SESSION["userid"])) {
+            $useridq = $_SESSION['userid'];
+        }
+      
+
+       $sql = "SELECT * FROM iBayItems WHERE userId = $useridq";
+
+	   include 'get data.php';
+	?>
   

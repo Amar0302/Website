@@ -8,11 +8,7 @@ $db_name = 'group03'; // Database Name
 $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name); 
 if (!$conn) {
 	die ('Failed to connect to MySQL: ' . mysqli_connect_error());	
-
 } 
-
-
-
 		
 $query = mysqli_query($conn, $sql);
 
@@ -29,7 +25,7 @@ if (!$query) {
 	<title>Displaying MySQL Data in HTML Table</title>
 	<link type= "text/css" rel = "stylesheet" href = "stylesheetlogin.css" />
 
-	<<style type="text/css">
+	<style type="text/css">
 
 table {
 	margin: auto;
@@ -58,7 +54,7 @@ table td {
 
 /* Table Header */
 .data-table thead th {
-	background-color: #508abb;
+	background-color: green;
 	color: #FFFFFF;
 	border-color: #6ea1cc !important;
 	text-transform: uppercase;
@@ -75,7 +71,7 @@ table td {
 }
 
 .data-table tbody tr:nth-child(odd) td {
-	background-color: #f4fbff;
+	background-color: #fffff0;
 }
 .data-table tbody tr:hover td {
 	background-color: #ffffa2;
@@ -106,7 +102,6 @@ table td {
 
 	</style> 
 </head>
-
 <body class = "get-data-body">
 			<p> Order By:
 				<?php
@@ -116,20 +111,19 @@ table td {
 							$getsearch = $_GET["search"];
 							$searchqueryparam='&search={$getsearch}';
 						}
-					echo '<select name="orderBy_dropdown" id="orderBy_dropdown" onchange="location = this.value;" >';	
-					echo '<option value="view.php?orderBy=itemId{$searchqueryparam}" name="orderBy_dropdown">';
-					echo '<option value="view.php?orderBy=userId{$searchqueryparam}" name="orderBy_dropdown"> User ID</option>'; 
-					echo '<option value="view.php?orderBy=title{$searchqueryparam}" name="orderBy_dropdown"> Title</option>';
-					/*echo '<option value="" name="orderBy_dropdown"> <a href="view.php?orderBy=category{$searchqueryparam}">Category</option>';
-					echo '<option value="" name="orderBy_dropdown"> <a href="view.php?orderBy=description{$searchqueryparam}">Description</option>';
-					echo '<option value="" name="orderBy_dropdown"> <a href="view.php?orderBy=price{$searchqueryparam}">Price</option>';
-					echo '<option value="" name="orderBy_dropdown"> <a href="view.php?orderBy=postage{$searchqueryparam}"> Postage</option>';
-					echo '<option value="" name="orderBy_dropdown"> <a href="view.php?orderBy=start{$searchqueryparam}"> Start Time</option>';
-					echo '<option value="" name="orderBy_dropdown"> <a href="view.php?orderBy=finish{$searchqueryparam}"> Finish Time</option>';
-					?>*/?>
+					echo "<select name=\"orderBy_dropdown\" id=\"orderBy_dropdown\" onchange=\"location = this.value;\" >";	
+					echo "<option value=\"view.php?orderBy=itemId{$searchqueryparam}\" name=\"orderBy_dropdown\">";
+					echo "<option value=\"view.php?orderBy=userId{$searchqueryparam}\" name=\"orderBy_dropdown\"> User ID</option>"; 
+					echo "<option value=\"view.php?orderBy=title{$searchqueryparam}\" name=\"orderBy_dropdown\"> Title</option>";
+					echo "<option value=\"view.php?orderBy=category{$searchqueryparam}\" name=\"orderBy_dropdown\"> Category</option>";
+					echo "<option value=\"view.php?orderBy=description{$searchqueryparam}\" name=\"orderBy_dropdown\"> Description</option>"; 
+					echo "<option value=\"view.php?orderBy=price{$searchqueryparam}\" name=\"orderBy_dropdown\"> Price</option>";
+					echo "<option value=\"view.php?orderBy=postage{$searchqueryparam}\" name=\"orderBy_dropdown\"> Postage</option>"; 
+					echo "<option value=\"view.php?orderBy=start{$searchqueryparam}\" name=\"orderBy_dropdown\"> Start Time</option>";
+					echo "<option value=\"view.php?orderBy=finish{$searchqueryparam}\" name=\"orderBy_dropdown\"> Finish Time</option>";
+				?>
 				</select>
 			</p>
-
 	<table class="data-table">
 		<caption class="title">Products</caption>
 		<thead>
