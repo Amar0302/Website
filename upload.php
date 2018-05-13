@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require_once('globals.php');
     error_reporting(E_ALL);
 
@@ -71,10 +72,10 @@
         // no errors, so insert the image
  
 		$query = sprintf(
-            "insert into iBayItems (itemId, userId, title, category, description, price, postage )
+            "insert into iBayItems (itemId, userid, title, category, description, price, postage )
                 values (%d, '%s', '%s', '%s', '%s', '%s', '%s')",
             '', 					// the itemId is auto increment 
-            $_REQUEST['userId'],
+            $_SESSION['userid'],
             $_REQUEST['title'],
             $_REQUEST['category'],
             $_REQUEST['description'],
@@ -103,7 +104,7 @@
 		if (PEAR::isError($result)){die($result->getMessage());}  
 
         // finally, redirect the user to view the new image
-        header("Location: view1.php?dbname=$dbname&itemId=" . $id);
+        header("Location: my_ibay.php?dbname=$dbname&itemId=" . $id);
         exit;
     }
 ?>
