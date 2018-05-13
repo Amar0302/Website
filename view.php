@@ -35,6 +35,7 @@
             <h1>iBay Uploaded Items</h1>
  
  	<?php
+
         $searchq = '';
         $orderBy = 'itemId';
         if(isset($_GET["search"])) {
@@ -47,6 +48,7 @@
        $sql = "SELECT * FROM iBayItems WHERE title like '%$searchq%' OR category LIKE '%$searchq%' OR description LIKE '%$searchq%' ORDER BY $orderBy";
 
 	   include 'get data.php';
+
 	?>
 
 

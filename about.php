@@ -20,7 +20,7 @@
 
 
 <p><strong>Who We Are</strong></p>
-<p>We connect millions of buyers and sellers around the world, empowering people and creating economic opportunity for all. Whether you are buying new or used, plain or luxurious, commonplace or rare, trendy or one-of-a-kind &ndash; if it exists in the world, it probably is for sale on iBay.</p>
+<p>We're Creating a Better Form of Commerce We connect millions of buyers and sellers around the world, empowering people and creating economic opportunity for all. Whether you are buying new or used, plain or luxurious, commonplace or rare, trendy or one-of-a-kind &ndash; if it exists in the world, it probably is for sale on iBay.</p>
 <p><strong>What We Do</strong></p>
 <p>Our mission is to be the world&rsquo;s favorite destination for discovering great value and unique selection. We give sellers the platform, solutions, and support they need to grow their businesses and thrive. We measure our success by our customers' success.</p>
 <p><strong>What Sets Us Apart</strong></p>

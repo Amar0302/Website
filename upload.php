@@ -104,7 +104,9 @@
 		if (PEAR::isError($result)){die($result->getMessage());}  
 
         // finally, redirect the user to view the new image
+
         header("Location: my_ibay.php?dbname=$dbname&itemId=" . $id);
+
         exit;
     }
 ?>

@@ -8,7 +8,11 @@ $db_name = 'group03'; // Database Name
 $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name); 
 if (!$conn) {
 	die ('Failed to connect to MySQL: ' . mysqli_connect_error());	
+
 } 
+
+
+
 		
 $query = mysqli_query($conn, $sql);
 
@@ -102,6 +106,7 @@ table td {
 
 	</style> 
 </head>
+
 <body class = "get-data-body">
 			<p> Order By:
 				<?php
@@ -124,6 +129,7 @@ table td {
 					?>*/?>
 				</select>
 			</p>
+
 	<table class="data-table">
 		<caption class="title">Products</caption>
 		<thead>
