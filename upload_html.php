@@ -4,12 +4,6 @@
 	<head>
    <title> Upload Item to iBay </title>
    <link type= "text/css" rel = "stylesheet" href = "stylesheetlogin.css" />
-   <script> 
-	function clickAlertItem() {
-		alert("Your product has succesfully uploaded");
-		}
-</script>		
-  
   </head>
 
 	<body>
@@ -64,11 +58,8 @@
 			<p> Images
 				<input name="imagefile" type="file" />
 			</p>
-			<p> Additonal Images
-				<input name="imagefile2" type="file" />
-			</p>
 			<p>
-				<input class="button" type="submit" value="submit" onclick="clickAlertItem()" />
+				<input class="button" type="submit" value="submit" />
 			</p>
 
 		</form>
