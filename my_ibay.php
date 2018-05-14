@@ -17,7 +17,7 @@ require_once('globals.php');
 	?>
 
 	<center>
-  <p><font size='10' color='green'>My iBay</font>
+  <p><font size='10' color='green'>My iBay</font> </p>
 
   	<?php
         $useridq = '';

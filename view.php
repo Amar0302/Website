@@ -35,8 +35,35 @@
             <h1>iBay Uploaded Items</h1>
  
  	<?php
+        
+        $regex = '.*';
+        $freepostagecond = 'true';
+        $pricemorethan = 0;
+        $pricelessthan = 10000000000000;
+        $category = '';
         $searchq = '';
         $orderBy = 'itemId';
+        
+        if(isset($_GET["freepostage"])) {
+            $freepostage = $_GET['freepostage'];
+            if($freepostage == "yes") {
+                $freepostagecond = 'postage = 0';
+            } else {
+                $freepostagecond = 'postage > 0';
+            }
+        }
+        if(isset($_GET["regex"])) {
+            $regex = $_GET['regex'];
+        }
+        if(isset($_GET["pricemorethan"])) {
+            $pricemorethan = $_GET['pricemorethan'];
+        }
+        if(isset($_GET["pricelessthan"])) {
+            $pricelessthan = $_GET['pricelessthan'];
+        }
+        if(isset($_GET["category"])) {
+            $category = $_GET['category'];
+        }
         if(isset($_GET["search"])) {
             $searchq = $_GET['search'];
         }
@@ -44,7 +71,7 @@
             $orderBy = $_GET['orderBy'];
         }
 
-       $sql = "SELECT * FROM iBayItems WHERE title like '%$searchq%' OR category LIKE '%$searchq%' OR description LIKE '%$searchq%' ORDER BY $orderBy";
+       $sql = "SELECT * FROM iBayItems WHERE (title like '%$searchq%' OR category LIKE '%$searchq%'  OR description LIKE '%$searchq%') AND (category LIKE '%$category%') AND (price < $pricelessthan) AND (price > $pricemorethan) AND ($freepostagecond) AND (title RLIKE '$regex' OR category RLIKE '$regex'  OR description RLIKE '$regex') ORDER BY $orderBy";
 
 	   include 'get data.php';
 	?>

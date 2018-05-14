@@ -15,7 +15,7 @@ if(!empty($_GET['email']))   //checking the 'userid' which is from Sign-In.html,
 	
 	$row = mysql_fetch_array($query);
 
-	if(!empty($row['name']) AND !empty($row['password']))
+	if(!empty($row['name']) AND !empty($row['userid']))
 	{
 		$_SESSION['name'] = $row['name'];
 		$_SESSION['userid'] = $row['userid'];
