@@ -12,7 +12,6 @@ if (isset($_SESSION['name'])){
 				<input type="submit" value=">>" />
 			</form>
 			<p> Welcome: <?php echo "{$_SESSION['name']}" ?> </p>
-			<p> Your User ID is: <?php echo "{$_SESSION['userid']}" ?> </p>
 		</div>
 		<div class="dropdown">
 				<button class="dropbtn">My iBay
@@ -24,6 +23,7 @@ if (isset($_SESSION['name'])){
 				<a href="account.php">Account</a>
 			</div>
 		</div> 
+		<a href="advanced_search.php">Advanced Search</a>
 		<a href="view.php">Products</a>
 		<a href="about.php">About</a>
 		<a href="contactus.php">Contact us</a>
@@ -42,7 +42,8 @@ if (isset($_SESSION['name'])){
 	
   </div>
 	
-   
+
+  <a href="advanced_search.php">Advanced Search</a>
   <a href="view.php">Products</a>
   <a href="about.php">About</a>
   <a href="contactus.php">Contact us</a>

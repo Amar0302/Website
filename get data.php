@@ -103,24 +103,54 @@ table td {
 	</style> 
 </head>
 <body class = "get-data-body">
-			<p> Order By:
 				<?php
-						
+						$regexqueryparam = '';
 						$searchqueryparam='';
+						$categoryqueryparam='';
+						$pricelessthanqueryparam='';
+						$pricemorethanqueryparam='';
+						$freepostagequeryparam='';
+
+						if(isset($_GET["regex"])) {
+							$getregex = $_GET["regex"];
+							$regexqueryparam="&regex={$getregex}";
+						}
+						if(!isset($orderBy)) {
+							$orderBy = 'itemId';
+						}
 						if(isset($_GET["search"])) {
 							$getsearch = $_GET["search"];
-							$searchqueryparam='&search={$getsearch}';
+							$searchqueryparam="&search={$getsearch}";
 						}
+						if(isset($_GET["category"])) {
+							$getcategory = $_GET["category"];
+							$categoryqueryparam="&category={$getcategory}";
+						}
+						if(isset($_GET["pricelessthan"])) {
+							$getpricelessthan = $_GET["pricelessthan"];
+							$pricelessthanqueryparam="&pricelessthan={$getpricelessthan}";
+						}
+						if(isset($_GET["pricemorethan"])) {
+							$getpricemorethan = $_GET["pricemorethan"];
+							$pricemorethanqueryparam="&pricemorethan={$getpricemorethan}";
+						}
+						if(isset($_GET["freepostage"])) {
+							$getfreepostage = $_GET["freepostage"];
+							$freepostagequeryparam="&freepostage={$getfreepostage}";
+						}
+					echo "Currently ordered by: {$orderBy}";
+					echo " <p> Order by: ";
 					echo "<select name=\"orderBy_dropdown\" id=\"orderBy_dropdown\" onchange=\"location = this.value;\" >";	
-					echo "<option value=\"view.php?orderBy=itemId{$searchqueryparam}\" name=\"orderBy_dropdown\">";
-					echo "<option value=\"view.php?orderBy=userId{$searchqueryparam}\" name=\"orderBy_dropdown\"> User ID</option>"; 
-					echo "<option value=\"view.php?orderBy=title{$searchqueryparam}\" name=\"orderBy_dropdown\"> Title</option>";
-					echo "<option value=\"view.php?orderBy=category{$searchqueryparam}\" name=\"orderBy_dropdown\"> Category</option>";
-					echo "<option value=\"view.php?orderBy=description{$searchqueryparam}\" name=\"orderBy_dropdown\"> Description</option>"; 
-					echo "<option value=\"view.php?orderBy=price{$searchqueryparam}\" name=\"orderBy_dropdown\"> Price</option>";
-					echo "<option value=\"view.php?orderBy=postage{$searchqueryparam}\" name=\"orderBy_dropdown\"> Postage</option>"; 
-					echo "<option value=\"view.php?orderBy=start{$searchqueryparam}\" name=\"orderBy_dropdown\"> Start Time</option>";
-					echo "<option value=\"view.php?orderBy=finish{$searchqueryparam}\" name=\"orderBy_dropdown\"> Finish Time</option>";
+					echo "<option value=\"\" selected disabled hidden>Choose here</option>";
+					echo "<option value=\"view.php?orderBy=itemId{$searchqueryparam}{$categoryqueryparam}{$pricelessthanqueryparam}{$pricemorethanqueryparam}{$freepostagequeryparam}{$regexqueryparam} \" name=\"orderBy_dropdown\">Item ID</option>";
+					echo "<option value=\"view.php?orderBy=userId{$searchqueryparam}{$categoryqueryparam}{$pricelessthanqueryparam}{$pricemorethanqueryparam}{$freepostagequeryparam}{$regexqueryparam}\" name=\"orderBy_dropdown\"> User ID</option>"; 
+					echo "<option value=\"view.php?orderBy=title{$searchqueryparam}{$categoryqueryparam}{$pricelessthanqueryparam}{$pricemorethanqueryparam}{$freepostagequeryparam}{$regexqueryparam}\" name=\"orderBy_dropdown\"> Title</option>";
+					echo "<option value=\"view.php?orderBy=category{$searchqueryparam}{$categoryqueryparam}{$pricelessthanqueryparam}{$pricemorethanqueryparam}{$freepostagequeryparam}{$regexqueryparam}\" name=\"orderBy_dropdown\"> Category</option>";
+					echo "<option value=\"view.php?orderBy=description{$searchqueryparam}{$categoryqueryparam}{$pricelessthanqueryparam}{$pricemorethanqueryparam}{$freepostagequeryparam}{$regexqueryparam}\" name=\"orderBy_dropdown\"> Description</option>"; 
+					echo "<option value=\"view.php?orderBy=price{$searchqueryparam}{$categoryqueryparam}{$pricelessthanqueryparam}{$pricemorethanqueryparam}{$freepostagequeryparam}{$regexqueryparam}\" name=\"orderBy_dropdown\"> Price</option>";
+					echo "<option value=\"view.php?orderBy=postage{$searchqueryparam}{$categoryqueryparam}{$pricelessthanqueryparam}{$pricemorethanqueryparam}{$freepostagequeryparam}{$regexqueryparam}\" name=\"orderBy_dropdown\"> Postage</option>"; 
+					echo "<option value=\"view.php?orderBy=start{$searchqueryparam}{$categoryqueryparam}{$pricelessthanqueryparam}{$pricemorethanqueryparam}{$freepostagequeryparam}{$regexqueryparam}\" name=\"orderBy_dropdown\"> Start Time</option>";
+					echo "<option value=\"view.php?orderBy=finish{$searchqueryparam}{$categoryqueryparam}{$pricelessthanqueryparam}{$pricemorethanqueryparam}{$freepostagequeryparam}{$regexqueryparam}\" name=\"orderBy_dropdown\"> Finish Time</option>";
 				?>
 				</select>
 			</p>
@@ -143,19 +173,28 @@ table td {
 		<?php
 			$no 	= 1;
 			$total 	= 0;
-			while ($row = mysqli_fetch_array($query))
-			{
-				echo '<tr>
-						<td>'.$row['itemId'].'</td>
-						<td>'.$row['userId'].'</td>
-						<td>'.$row['title'].'</td>
-						<td>'.$row['category'].'</td>
-						<td>'.$row['description'].'</td>
-						<td>'.$row['price'].'</td>
-						<td>'.$row['postage'].'</td>
-						<td>'.$row['start'].'</td>
-						<td>'.$row['finish'].'</td>
-					</tr>';
+			
+        		 
+			while ($row = mysqli_fetch_array($query)) {
+				$itemId = $row['itemId'];
+				$sql = mysql_query("SELECT *  FROM iBayImages where itemId =  {$itemId}");
+				$imageRow = mysql_fetch_array($sql);
+				$viewpicture = '';
+
+				if(!empty($imageRow['imageId'])) 
+					$viewpicture = $imageRow['imageId'];
+
+				echo "<tr>
+						<td>{$row['itemId']}</td>
+						<td>{$row['userId']}</td>
+						<td><a href=\"file.php?imageId={$viewpicture}\">{$row['title']}</a></td>
+						<td>{$row['category']}</td>
+						<td>{$row['description']}</td>
+						<td>£{$row['price']}</td>
+						<td>£{$row['postage']}</td>
+						<td>{$row['start']}</td>
+						<td>{$row['finish']}</td>
+					</tr>";
 				$no++;
 			} 
 			$count = mysqli_num_rows($query);
